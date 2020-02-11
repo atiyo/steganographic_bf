@@ -14,9 +14,9 @@ intToChar i
   | i == 7 = ']' 
 
 logToProg :: String -> String
-logToProg log = intToChar . (`mod` 8) <$> commits
+logToProg messages = intToChar . (`mod` 8) <$> commits
   where removeSpaces x = [char | char <- x, char /= ' ']
-        commits = length . removeSpaces <$> reverse (lines log)
+        commits = length . removeSpaces <$> reverse (lines messages)
 
 authorToProg :: String -> IO String
 authorToProg author = logToProg <$> stdout
