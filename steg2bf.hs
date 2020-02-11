@@ -1,4 +1,4 @@
-module Blah where
+module Main where
 import System.Environment
 import System.Process
 
